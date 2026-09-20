@@ -43,3 +43,5 @@ http://127.0.0.1:8081/diag.php?cmd=id
 ## Root cause
 
 OSPOS stores an attacker-controlled value in the item's Item Number / Barcode field. After that item is included in a completed invoice, requesting `/sales/sendPdf/<sale_id>` places the value into a PDF generation context where it is interpreted as PHP by Dompdf.
+
+This has been fixed in PR #4568 https://github.com/opensourcepos/opensourcepos/pull/4568
